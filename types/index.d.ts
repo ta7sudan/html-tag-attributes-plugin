@@ -1,4 +1,4 @@
-export class HtmlWebpackTagAttrPlugin {
+export default class HtmlWebpackTagAttrPlugin {
 	constructor(options: {
 		script?: object | {
 			(tag: {

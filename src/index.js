@@ -2,15 +2,15 @@
 'use strict';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-class HtmlWebpackTagAttrPlugin {
+class HtmlTagAttributesPlugin {
 	constructor(options) {
 		this._options = options;
 	}
 	apply(compiler) {
 		const options = this._options;
-		compiler.hooks.compilation.tap('htmlWebpackTagAttrPlugin', compilation => {
+		compiler.hooks.compilation.tap('htmlTagAttributesPlugin', compilation => {
 			const hooks = HtmlWebpackPlugin.getHooks(compilation);
-			hooks.alterAssetTags.tapPromise('htmlWebpackTagAttrPlugin', async ({ assetTags }) => {
+			hooks.alterAssetTags.tapPromise('htmlTagAttributesPlugin', async ({ assetTags }) => {
 				const allTags = Object.keys(assetTags).reduce((rst, k) => rst.concat(assetTags[k]), []);
 				allTags.forEach(v => {
 					if (typeof options[v.tagName] === 'function') {
@@ -24,4 +24,4 @@ class HtmlWebpackTagAttrPlugin {
 	}
 }
 
-module.exports = HtmlWebpackTagAttrPlugin;
+module.exports = HtmlTagAttributesPlugin;
