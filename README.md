@@ -4,9 +4,7 @@ Add custom attributes to tags injected by html-webpack-plugin.
 
 
 ## Requirements
-
-* html-webpack-plugin v4.0+
-* set after html-webpack-plugin
+set after html-webpack-plugin
 
 
 
