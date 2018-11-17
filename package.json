@@ -1,0 +1,56 @@
+{
+  "name": "html-tag-attributes-plugin",
+  "version": "0.1.0",
+  "description": "Add custom attributes to tags injected by html-webpack-plugin",
+  "main": "src/index.js",
+  "types": "types/index.d.ts",
+  "typings": "types/index.d.ts",
+  "scripts": {
+    "lint": "eslint src",
+    "format": "prettier --config .prettierrc.js --write src/**/*.js test/**/*.js",
+    "inspect": "jsinspect src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ta7sudan/html-tag-attributes-plugin.git"
+  },
+  "keywords": [
+    "html",
+    "webpack",
+    "plugin",
+    "tag",
+    "attributes",
+    "crossorigin"
+  ],
+  "author": "ta7sudan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ta7sudan/html-tag-attributes-plugin/issues"
+  },
+  "files": [
+    "src",
+    "dist",
+    "example",
+    "types"
+  ],
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "homepage": "https://github.com/ta7sudan/html-tag-attributes-plugin#readme",
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "html-webpack-plugin": "^4.0.0-beta.4",
+    "husky": "^1.1.2",
+    "jsinspect": "^0.12.7",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3"
+  }
+}
