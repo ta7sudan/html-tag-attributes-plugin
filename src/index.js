@@ -19,17 +19,17 @@ class HtmlTagAttributesPlugin {
 	}
 	apply(compiler) {
 		const options = this._options;
-		compiler.hooks.compilation.tap('htmlTagAttributesPlugin', compilation => {
+		compiler.hooks.compilation.tap(this.constructor.name, compilation => {
 			if (typeof HtmlWebpackPlugin.getHooks === 'function') {
 				HtmlWebpackPlugin
 					.getHooks(compilation)
 					.alterAssetTags
-					.tapPromise('htmlTagAttributesPlugin', async ({ assetTags }) => {
+					.tapPromise(this.constructor.name, async ({ assetTags }) => {
 						const allTags = Object.keys(assetTags).reduce((rst, k) => rst.concat(assetTags[k]), []);
 						addAttributes(allTags, options);
 					});
 			} else {
-				compilation.hooks.htmlWebpackPluginAlterAssetTags.tapPromise('htmlTagAttributesPlugin', async ({ body, head }) => {
+				compilation.hooks.htmlWebpackPluginAlterAssetTags.tapPromise(this.constructor.name, async ({ body, head }) => {
 					const allTags = body.concat(head);
 					addAttributes(allTags, options);
 				});
