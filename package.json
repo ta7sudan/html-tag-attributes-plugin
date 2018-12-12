@@ -1,6 +1,6 @@
 {
   "name": "html-tag-attributes-plugin",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Add custom attributes to tags injected by html-webpack-plugin",
   "main": "src/index.js",
   "types": "types/index.d.ts",
