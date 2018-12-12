@@ -23,7 +23,6 @@ class HtmlTagAttributesPlugin {
 			if (typeof HtmlWebpackPlugin.getHooks === 'function') {
 				HtmlWebpackPlugin
 					.getHooks(compilation)
-					.hooks
 					.alterAssetTags
 					.tapPromise('htmlTagAttributesPlugin', async ({ assetTags }) => {
 						const allTags = Object.keys(assetTags).reduce((rst, k) => rst.concat(assetTags[k]), []);
